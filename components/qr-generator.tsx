@@ -552,9 +552,9 @@ export default function QRGenerator() {
           link.href = existingDataUrl
           link.click()
         } else {
-          // Generate high-res version for download
+          // Generate high-res version for download (4x resolution for crisp output)
           const tempCanvas = document.createElement("canvas")
-          const highResSettings = { ...qrSettings, size: qrSettings.size * 2 }
+          const highResSettings = { ...qrSettings, size: qrSettings.size * 4 }
 
           const options = {
             errorCorrectionLevel: highResSettings.errorCorrectionLevel,
@@ -575,7 +575,7 @@ export default function QRGenerator() {
               const logoImg = new Image()
               logoImg.crossOrigin = "anonymous"
               logoImg.onload = () => {
-                const logoSize = Math.min((highResSettings.size * logoSettings.size) / 100, 240)
+                const logoSize = Math.min((highResSettings.size * logoSettings.size) / 100, 480)
                 const position = calculateLogoPosition(tempCanvas.width, tempCanvas.height, logoSize)
 
                 const x = Math.max(0, Math.min(position.x, tempCanvas.width - logoSize))
@@ -584,13 +584,13 @@ export default function QRGenerator() {
                 if (logoSettings.position === "center") {
                   ctx.fillStyle = highResSettings.backgroundColor
                   ctx.beginPath()
-                  ctx.arc(x + logoSize / 2, y + logoSize / 2, logoSize / 2 + 8, 0, 2 * Math.PI)
+                  ctx.arc(x + logoSize / 2, y + logoSize / 2, logoSize / 2 + 16, 0, 2 * Math.PI)
                   ctx.fill()
                 } else {
-                  const radius = 8
+                  const radius = 16
                   ctx.fillStyle = highResSettings.backgroundColor
                   ctx.beginPath()
-                  ctx.roundRect(x - 4, y - 4, logoSize + 8, logoSize + 8, radius)
+                  ctx.roundRect(x - 8, y - 8, logoSize + 16, logoSize + 16, radius)
                   ctx.fill()
                 }
 
@@ -1040,7 +1040,7 @@ export default function QRGenerator() {
               onClick={() => downloadQR("svg")}
               disabled={!qrDataUrl}
               variant="outline"
-              className="flex items-center bg-background text-foreground border-neutral-800 hover:bg-neutral-900"
+              className="flex items-center"
             >
               Download SVG <Download className="inline-block ml-2 w-4 h-4" />
             </Button>
@@ -1058,7 +1058,7 @@ export default function QRGenerator() {
             <Button
               onClick={() => downloadQR("svg")}
               variant="outline"
-              className="flex items-center bg-background text-foreground border-neutral-800 hover:bg-neutral-900"
+              className="flex items-center"
             >
               Download All SVG <Download className="inline-block ml-2 w-4 h-4" />
             </Button>

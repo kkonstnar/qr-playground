@@ -292,7 +292,7 @@ export function UserGuide({ isMobile }: UserGuideProps) {
                       <div key={index} className="p-3 rounded-lg bg-muted/50">
                         <h5 className="font-medium text-sm mb-1">{example.scenario}</h5>
                         <p className="text-xs text-muted-foreground mb-1">{example.description}</p>
-                        <span className="text-xs bg-orange-100 dark:bg-orange-900/20 text-orange-800 dark:text-orange-200 px-2 py-1 rounded">
+                        <span className="text-xs bg-muted text-foreground px-2 py-1 rounded border">
                           {example.limit}
                         </span>
                       </div>
@@ -336,9 +336,9 @@ export function UserGuide({ isMobile }: UserGuideProps) {
                   </ol>
                 </div>
 
-                <div className="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
-                  <h4 className="font-medium text-sm text-blue-800 dark:text-blue-200 mb-1">💡 Pro Tips:</h4>
-                  <ul className="text-xs text-blue-700 dark:text-blue-300 space-y-1">
+                <div className="p-3 rounded-lg bg-muted/50 border">
+                  <h4 className="font-medium text-sm mb-1">💡 Pro Tips:</h4>
+                  <ul className="text-xs text-muted-foreground space-y-1">
                     <li>• Column headers can be: url/link, title/name, description/desc</li>
                     <li>• Files without headers work too - first column assumed to be URL</li>
                     <li>• Titles and descriptions appear in the QR code cards</li>
@@ -426,7 +426,7 @@ export function UserGuide({ isMobile }: UserGuideProps) {
                     <p className="text-xs text-muted-foreground mb-2">
                       Can recover from up to 7% damage. Best for clean environments and simple text.
                     </p>
-                    <div className="text-xs text-green-600 dark:text-green-400">
+                    <div className="text-xs text-muted-foreground">
                       ✓ Maximum data capacity<br/>
                       ✓ Smallest QR codes<br/>
                       ✓ Clean, controlled scanning
@@ -438,7 +438,7 @@ export function UserGuide({ isMobile }: UserGuideProps) {
                     <p className="text-xs text-muted-foreground mb-2">
                       Can recover from up to 15% damage. Good balance between reliability and size.
                     </p>
-                    <div className="text-xs text-blue-600 dark:text-blue-400">
+                    <div className="text-xs text-muted-foreground">
                       ✓ Balanced approach<br/>
                       ✓ Good for most applications<br/>
                       ✓ Handles minor damage well
@@ -450,7 +450,7 @@ export function UserGuide({ isMobile }: UserGuideProps) {
                     <p className="text-xs text-muted-foreground mb-2">
                       Can recover from up to 25% damage. Good for adding logos or branding.
                     </p>
-                    <div className="text-xs text-orange-600 dark:text-orange-400">
+                    <div className="text-xs text-muted-foreground">
                       ✓ Excellent for logo integration<br/>
                       ✓ Handles significant damage<br/>
                       ✓ Print media applications
@@ -462,7 +462,7 @@ export function UserGuide({ isMobile }: UserGuideProps) {
                     <p className="text-xs text-muted-foreground mb-2">
                       Can recover from up to 30% damage. Maximum reliability for harsh conditions.
                     </p>
-                    <div className="text-xs text-red-600 dark:text-red-400">
+                    <div className="text-xs text-muted-foreground">
                       ✓ Maximum damage tolerance<br/>
                       ✓ Industrial/outdoor use<br/>
                       ✓ Large logo compatibility
@@ -470,9 +470,9 @@ export function UserGuide({ isMobile }: UserGuideProps) {
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
-                  <h4 className="font-medium text-sm text-blue-800 dark:text-blue-200 mb-2">💡 Choosing the Right Level:</h4>
-                  <ul className="text-xs text-blue-700 dark:text-blue-300 space-y-1">
+                <div className="p-3 rounded-lg bg-muted/50 border">
+                  <h4 className="font-medium text-sm mb-2">💡 Choosing the Right Level:</h4>
+                  <ul className="text-xs text-muted-foreground space-y-1">
                     <li>• <strong>Low:</strong> Digital displays, clean environments, maximum data</li>
                     <li>• <strong>Medium:</strong> General purpose, business cards, flyers</li>
                     <li>• <strong>Quartile:</strong> Adding logos, outdoor signs, marketing materials</li>
